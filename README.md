@@ -1,5 +1,5 @@
 
-```msdos
+```shell
 D:\oapc-app>git clone https://github.com/xpoveda/oapc-server.git
 Cloning into 'oapc-server'...
 remote: Counting objects: 65, done.
