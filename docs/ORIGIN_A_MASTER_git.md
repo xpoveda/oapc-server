@@ -1,6 +1,14 @@
 Comprobación y sincronizacion de origin con master
 ==================================================
 
+Rápido
+------
+```
+git fetch origin master
+git pull origin master
+```
+
+
 Ver ramas
 ---------
 Vemos las **ramas** definidas con `git branch`. 
