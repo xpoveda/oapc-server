@@ -1,5 +1,5 @@
 
-Preparacion para subida de repo
+Preparación para subida de repo
 ===============================
 En el caso del server hacer un "make clean".
 En el caso del front eliminar la carpeta node_modules o ignorarla cuando hagamos el "add" mas tarde.
