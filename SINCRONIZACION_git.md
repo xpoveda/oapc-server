@@ -1,7 +1,20 @@
-Comprobación y sincronizacion con repo
-======================================
+Comprobación y sincronizacion de origin con master
+==================================================
 
-Realizamos la comprobacion con `git fetch origin master`
+Ver ramas
+---------
+Vemos las **ramas** definidas con `git branch`. 
+
+*master* es la rama local y *origin* la que esta en Github.
+```
+D:\oapc-app\oapc-server>git branch
+* master
+  origin/master
+```
+
+Estado sincronización
+---------------------
+Realizamos la **comprobacion** de la sincronización con `git fetch origin master`
 ```
 D:\oapc-app\oapc-server>git fetch origin master
 remote: Counting objects: 3, done.
@@ -13,8 +26,11 @@ From https://github.com/xpoveda/oapc-server
    aae14f5..f5bdd55  master     -> origin/master
 ```
 
-El sistema nos indica con `git status` que a la rama master local esta desactualizada on la origin
-y que no tenemos nada que subir de la local a origin
+El sistema nos indica con `git status` el **estado** de *master* vs *origin*.
+
+La rama *master* (local) esta desactualizada con la *origin*.
+
+No tenemos nada que subir de *master* a *origin*.
 ```
 D:\oapc-app\oapc-server>git status
 On branch master
@@ -24,9 +40,9 @@ Your branch is behind 'remotes/origin/master' by 2 commits, and can be fast-forw
 nothing to commit, working tree clean
 ```
 
-Podemos ver las diferencias con `git diff master origin/master`
+Podemos ver las **diferencias** entre las dos ramas con `git diff master origin`
 ```
-D:\oapc-app\oapc-server>git diff master origin/master
+D:\oapc-app\oapc-server>git diff master origin
 warning: refname 'origin/master' is ambiguous.
 diff --git a/README.md b/README.md
 index 120ee72..8b13789 100644
@@ -34,7 +50,9 @@ index 120ee72..8b13789 100644
 +++ b/README.md
 ```
 
-Con `git log` podemos ver los hashes los diferentes commits.
+Con `git log` podemos ver los **hashes** los diferentes **commits** que han habido en *master*.
+
+Con `git log origin` los de *origin*.
 ```
 D:\oapc-app\oapc-server>git log
 commit 4b18b02a26a176b811ba7e23e7b2b19970ce5f2e (HEAD -> master)
@@ -44,9 +62,10 @@ Date:   Thu Feb 22 12:18:22 2018 +0100
     Update README.md
 ```
 
-Volcamos los cambios al local
+Sincronizado del origin al master
+---------------------------------
+Volcamos los cambios de *origin* a *master* con `git pull origin master`
 ```
-
 D:\oapc-app\oapc-server>git pull origin master
 From https://github.com/xpoveda/oapc-server
  * branch            master     -> FETCH_HEAD
@@ -54,21 +73,23 @@ Updating 4b18b02..f5bdd55
 Fast-forward
  README.md | 52 ++++++++++++++++++++++++++++++++++++----------------
  1 file changed, 36 insertions(+), 16 deletions(-)
-````
+```
 
-
-Ahora si que estamos sincronizados
+Ahora si que estamos sincronizados con el *origin*
 ```
 D:\oapc-app\oapc-server>git fetch origin master
 From https://github.com/xpoveda/oapc-server
  * branch            master     -> FETCH_HEAD
-
+ 
+ D:\oapc-app\oapc-server>git pull origin master
+From https://github.com/xpoveda/oapc-server
+ * branch            master     -> FETCH_HEAD
+Already up-to-date.
 
 D:\oapc-app\oapc-server>git status
 On branch master
 Your branch is up-to-date with 'remotes/origin/master'.
 
 nothing to commit, working tree clean
-
 
 ```
