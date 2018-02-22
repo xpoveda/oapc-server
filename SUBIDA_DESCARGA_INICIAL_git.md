@@ -2,8 +2,8 @@
 Subida inicial a Github y descarga inicial en local
 ===================================================
 
-Subida a github
-===============
+Subida inicial a github
+=======================
 Para el server
 ```
 Hacer antes un "make clean"
@@ -27,8 +27,8 @@ git remote add origin https://github.com/xpoveda/oapc-front.git
 git push -u origin master
 ```
 
-Descarga del repo en local inicial
-==================================
+Descarga inicial en local
+=========================
 ```shell
 D:\oapc-app>git clone https://github.com/xpoveda/oapc-server.git
 Cloning into 'oapc-server'...
