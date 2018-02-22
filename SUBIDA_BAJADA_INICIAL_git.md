@@ -1,6 +1,6 @@
 
-Preparación para subida de repo a github
-========================================
+Subida inicial a Github y descarga inicial en local
+===================================================
 
 Subida a github
 ===============
