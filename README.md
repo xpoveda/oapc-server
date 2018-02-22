@@ -17,7 +17,7 @@ Para el server
 
 Para el front
 -------------
-* crear repo en github "oapc-server"
+* crear repo en github "oapc-front"
 * git init
 * Con tortoisegit hacer un add de todos los fuentes con "Include ignored files" activo
 * git commit -m "first commit"
