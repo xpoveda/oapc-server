@@ -1,5 +1,13 @@
 Sincronizacion master con origin
 ================================
+Rápido
+------
+```
+git status
+git add -A
+git commit -m "mensaje"
+git push -u origin master
+```
 
 Comprobamos el estado con `git status`
 ```
