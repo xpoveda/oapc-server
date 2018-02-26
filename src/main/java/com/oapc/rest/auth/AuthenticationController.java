@@ -1,4 +1,4 @@
-package com.oapc.rest;
+package com.oapc.rest.auth;
 
 import com.oapc.common.DeviceProvider;
 import com.oapc.model.User;
@@ -31,7 +31,6 @@ import java.util.HashMap;
 import java.util.Map;
 
 @RestController
-//@RequestMapping( value = "/auth", produces = MediaType.APPLICATION_JSON_VALUE )
 @RequestMapping( value = "/api", produces = MediaType.APPLICATION_JSON_VALUE )
 public class AuthenticationController {
 

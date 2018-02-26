@@ -65,7 +65,6 @@ DashboardCtrl.resolve = {
       $http({
         headers: AuthService.createAuthorizationTokenHeader(),
         method: 'POST',
-        //url: 'auth/refresh' XPN
           url: 'api/refresh'
       })
       .success(function(res) {

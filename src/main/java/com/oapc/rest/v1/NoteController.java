@@ -1,4 +1,4 @@
-package com.oapc.rest;
+package com.oapc.rest.v1;
 
 import com.oapc.model.Note;
 import com.oapc.repo.NoteRepository;
@@ -11,7 +11,7 @@ import javax.validation.Valid;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api")
+@RequestMapping("/api/v1")
 public class NoteController {
 
     @Autowired
@@ -39,6 +39,7 @@ public class NoteController {
     @PutMapping("/notes/{id}")
     public ResponseEntity<Note> updateNote(@PathVariable(value = "id") Long noteId,
                                            @Valid @RequestBody Note noteDetails) {
+    	
         Note note = noteRepository.findOne(noteId);
         if(note == null) {
             return ResponseEntity.notFound().build();

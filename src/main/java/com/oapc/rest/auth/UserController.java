@@ -1,4 +1,4 @@
-package com.oapc.rest;
+package com.oapc.rest.auth;
 
 import com.oapc.model.User;
 import com.oapc.service.UserService;
