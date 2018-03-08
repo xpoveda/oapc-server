@@ -57,22 +57,14 @@ public class NoteController {
 	     //
     	 Stream<Note> stream_cont = noteRepository.findAllStream();
     	 
-    	 Long    total_reg = stream_cont.count();
-    	 Long    page_max  = (total_reg / per_page) + 1;
-    	 Integer skip_reg  = (page - 1) * per_page;    	 
-	     	     	     	     
-	     if (page > page_max)
-	    	 return new ResponseEntity<ErrorRest> (new ErrorRest("page > page_max"), HttpStatus.BAD_REQUEST);
+    	 Long    total_reg = stream_cont.count();    	     	    
+    	 Integer skip_reg  = (page - 1) * per_page;
     	
-    	 //
     	 Stream<Note> stream_data = noteRepository.findAllStream();    	     	     	
 	     
-	     logger.info("page=" + page.toString() + ",page_max=" + page_max.toString() + ",per_page=" + per_page.toString() + ",total_reg=" +  total_reg.toString());	    
+	     logger.info("page=" + page.toString() + ",per_page=" + per_page.toString() + ",total_reg=" +  total_reg.toString() + ",skip_reg=" + skip_reg.toString());	    
 	    	    	     
-	     if (page == 0)	    	
-	    	 return new ResponseEntity<List<Note>> (stream_data.collect(Collectors.toList()), HttpStatus.OK); 
-	     else 
-		     return new ResponseEntity<List<Note>> (stream_data.skip(skip_reg).limit(per_page).collect(Collectors.toList()), HttpStatus.OK);	    		 	    		 
+		 return new ResponseEntity<List<Note>> (stream_data.skip(skip_reg).limit(per_page).collect(Collectors.toList()), HttpStatus.OK);
     }    
         
     ///////////////////////////////////////////////////////////////////////////////////////////////////
@@ -81,7 +73,8 @@ public class NoteController {
     @GetMapping("/notes_count")
     public Long getNotesCount()	    		    		    	
     {    	    	 
-    	 Stream<Note> stream_cont = noteRepository.findAllStream();    	 	     
+    	 Stream<Note> stream_cont = noteRepository.findAllStream();   
+    	 
     	 return stream_cont.count();	     
     }
     
